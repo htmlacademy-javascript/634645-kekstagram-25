@@ -1,5 +1,3 @@
-'use strict';
-
 const COMMENT_MAX_LENGTH = 140;
 
 const getRandomNumber = (min, max) => {
