@@ -1,12 +1,14 @@
 const COMMENT_MAX_LENGTH = 140;
 
-const getRandomNumber = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomNumber = (a, b) => {
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  const result = Math.random() * (upper - lower + 1) + lower;
+
+  return Math.floor(result);
 };
 
-const checkCommentLength = (string, maxLength) => string.length <= maxLength;
+const checkStringLength  = (string, length) => string.length <= length;
 
 getRandomNumber(0, 10);
-checkCommentLength('comment', COMMENT_MAX_LENGTH);
+checkStringLength('comment', COMMENT_MAX_LENGTH);
