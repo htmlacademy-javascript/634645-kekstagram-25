@@ -93,7 +93,7 @@ const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements
 const checkStringLength  = (string, length) => string.length <= length;
 checkStringLength('', COMMENT_MAX_LENGTH);
 
-createComments = () => {
+const createComments = () => {
   commentId++;
   const sentencesCount = getRandomNumber(SENTENCES_COUNT_MIN, SENTENCES_COUNT_MAX);
 
@@ -105,7 +105,7 @@ createComments = () => {
   };
 };
 
-createPublication = (i) => {
+const createPublication = (i) => {
   const commentsCount = getRandomNumber(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX);
 
   return {
@@ -113,10 +113,9 @@ createPublication = (i) => {
     url: `photos/${i + 1}.jpg`,
     description: PHOTO_DESCRIPTIONS[i],
     likes: getRandomNumber(LIKES_COUNT_MIN, LIKES_COUNT_MAX),
-    comments: Array.from({length: commentsCount}, (_, i) => createComments(i)),
+    comments: Array.from({length: commentsCount}, createComments),
   };
 };
 
 const publications = Array.from({length: PUBLICATIONS_COUNT}, (_, i) => createPublication(i));
-
 console.log(publications);
