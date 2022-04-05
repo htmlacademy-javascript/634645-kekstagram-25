@@ -118,4 +118,7 @@ const createPublication = (i) => {
 };
 
 const publications = Array.from({length: PUBLICATIONS_COUNT}, (_, i) => createPublication(i));
+
+/* eslint-disable no-console */
 console.log(publications);
+/* eslint-enable no-console */
