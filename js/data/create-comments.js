@@ -65,6 +65,6 @@ const createComment = () => {
   };
 };
 
-const createComments = (count) => Array.from({length: count}, createComment)
+const createComments = (count) => Array.from({length: count}, createComment);
 
 export {createComments};
