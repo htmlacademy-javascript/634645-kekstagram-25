@@ -15,12 +15,14 @@ const bigPictureCommentsContainer = pictureModal.querySelector('.social__comment
 
 const picturesElement = document.querySelector('.pictures');
 
+/* eslint-disable no-use-before-define */
 const onModalEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     closePictureModal();
   }
 };
+/* eslint-enable no-use-before-define */
 
 const closePictureModal = () => {
   bodyElement.classList.remove('modal-open');
