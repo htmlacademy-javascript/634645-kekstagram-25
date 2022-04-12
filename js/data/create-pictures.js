@@ -1,5 +1,5 @@
 import {getRandomNumber} from '../utils.js';
-import {createComment} from './create-comment.js';
+import {createComments} from './create-comments.js';
 
 const PHOTO_DESCRIPTIONS = [
   'Будь таким человеком, с которым мечтаешь встретиться.',
@@ -35,7 +35,7 @@ const LIKES_COUNT_MAX = 200;
 const COMMENTS_COUNT_MIN = 0;
 const COMMENTS_COUNT_MAX = 4;
 
-const createPublication = (i) => {
+const createPicture = (i) => {
   const commentsCount = getRandomNumber(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX);
 
   return {
@@ -43,8 +43,10 @@ const createPublication = (i) => {
     url: `photos/${i + 1}.jpg`,
     description: PHOTO_DESCRIPTIONS[i],
     likes: getRandomNumber(LIKES_COUNT_MIN, LIKES_COUNT_MAX),
-    comments: Array.from({length: commentsCount}, createComment),
+    comments: createComments(commentsCount),
   };
 };
 
-export {createPublication};
+const createPictures = (count) => Array.from({length: count}, (_, i) => createPicture(i));
+
+export {createPictures};
