@@ -32,8 +32,8 @@ const PHOTO_DESCRIPTIONS = [
 const LIKES_COUNT_MIN = 15;
 const LIKES_COUNT_MAX = 200;
 
-const COMMENTS_COUNT_MIN = 0;
-const COMMENTS_COUNT_MAX = 4;
+const COMMENTS_COUNT_MIN = 1;
+const COMMENTS_COUNT_MAX = 5;
 
 const createPicture = (i) => {
   const commentsCount = getRandomNumber(COMMENTS_COUNT_MIN, COMMENTS_COUNT_MAX);

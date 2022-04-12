@@ -8,11 +8,12 @@ const pictureTemplate = document.querySelector('#picture')
 const pictureFragment = document.createDocumentFragment();
 const pictures = createPictures(PICTURES_COUNT);
 
-pictures.forEach(({comments, description, likes, url}) => {
+pictures.forEach(({comments, description, id, likes, url}) => {
   const pictureElement = pictureTemplate.cloneNode(true);
   const pictureImg = pictureElement.querySelector('.picture__img');
 
   pictureElement.href = url;
+  pictureElement.dataset.picture = id;
   pictureImg.src = url;
   pictureImg.alt = description;
   pictureElement.querySelector('.picture__comments').textContent = comments.length;
@@ -21,3 +22,5 @@ pictures.forEach(({comments, description, likes, url}) => {
 });
 
 picturesContainer.appendChild(pictureFragment);
+
+export {pictures};

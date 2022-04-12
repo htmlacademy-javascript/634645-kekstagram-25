@@ -41,7 +41,7 @@ const DEFAULT_MESSAGES = [
   'Как можно было поймать такой неудачный момент?!'
 ];
 
-const AVATAR_NUMBER_MIN = 0;
+const AVATAR_NUMBER_MIN = 1;
 const AVATAR_NUMBER_MAX = 6;
 
 const SENTENCES_COUNT_MIN = 1;
