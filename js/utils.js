@@ -10,4 +10,11 @@ const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements
 
 const checkStringLength  = (string, length) => string.length <= length;
 
-export {getRandomNumber, getRandomArrayElement, checkStringLength};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+export {
+  getRandomNumber,
+  getRandomArrayElement,
+  checkStringLength,
+  isEscapeKey,
+};
